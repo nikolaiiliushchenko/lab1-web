@@ -15,6 +15,7 @@
         <li><a href="#about">Про кінотеатр</a></li>
         <li><a href="#movies">Фільми</a></li>
         <li><a href="#schedule">Розклад сеансів</a></li>
+        <li><a href="#recommendation">Підбір фільму</a></li>
         <li><a href="#contacts">Контакти</a></li>
       </ul>
     </nav>
@@ -29,28 +30,35 @@
       <p>
         Ми пропонуємо зали з ергономічними кріслами, VIP-зони та класичний кінобар зі свіжим попкорном.
       </p>
-      <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600">
+      <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600" alt="Зала кінотеатру">
     </section>
 
     <section id="movies">
       <h2>Фільми у прокаті</h2>
       <p>Обирайте найкращі новинки кінематографа на цьому тижні:</p>
       
-      <article class="card">
-        <h3 class="card-title">Дюна: Частина друга</h3>
-        <p>Жанр: наукова фантастика, пригоди. Продовження саги про пустельну планету Арракіс.</p>
-        <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600">
-      </article>
+      <div class="card-grid">
+        <!-- Картка 1 -->
+        <article class="card">
+          <h3 class="card-title">Дюна: Частина друга</h3>
+          <p>Жанр: наукова фантастика, пригоди. Продовження саги про пустельну планету Арракіс.</p>
+          <img src="https://upload.wikimedia.org/wikipedia/uk/3/39/%D0%94%D1%8E%D0%BD%D0%B0_%D0%A7%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%D0%B4%D1%80%D1%83%D0%B3%D0%B0.jpg?utm_source=uk.wikipedia.org&utm_campaign=index&utm_content=original">
+        </article>
 
-      <article class="card">
-        <h3 class="card-title">Мисливці на привидів: Крижана імперія</h3>
-        <p>Жанр: комедія, фентезі. Нове покоління героїв рятує світ від льодовикового апокаліпсису.</p>
-      </article>
+        <!-- Картка 2 -->
+        <article class="card">
+          <h3 class="card-title">Мисливці на привидів: Крижана імперія</h3>
+          <p>Жанр: комедія, фентезі. Нове покоління героїв рятує світ від льодовикового апокаліпсису.</p>
+          <img src="https://thumb.wikimedia.org/wikipedia/uk/thumb/e/ed/%D0%9C%D0%B8%D1%81%D0%BB%D0%B8%D0%B2%D1%86%D1%96_%D0%BD%D0%B0_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%B4%D1%96%D0%B2%2C_%D0%9A%D1%80%D0%B8%D0%B6%D0%B0%D0%BD%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F%2C_2024%2C_%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80.jpg/250px-%D0%9C%D0%B8%D1%81%D0%BB%D0%B8%D0%B2%D1%86%D1%96_%D0%BD%D0%B0_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%B4%D1%96%D0%B2%2C_%D0%9A%D1%80%D0%B8%D0%B6%D0%B0%D0%BD%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F%2C_2024%2C_%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail">
+        </article>
 
-      <article class="card">
-        <h3 class="card-title">Ґодзілла та Конґ: Нова імперія</h3>
-        <p>Жанр: фантастика, бойовик. Епічна битва прадавніх титанів проти нової загрози.</p>
-      </article>
+        <!-- Картка 3 -->
+        <article class="card">
+          <h3 class="card-title">Ґодзілла та Конґ: Нова імперія</h3>
+          <p>Жанр: фантастика, бойовик. Епічна битва прадавніх титанів проти нової загрози.</p>
+          <img src="https://thumb.wikimedia.org/wikipedia/uk/thumb/7/78/%D2%90%D0%BE%D0%B4%D0%B7%D1%96%D0%BB%D0%BB%D0%B0_%D1%82%D0%B0_%D0%9A%D0%BE%D0%BD%D0%B3_%D0%9D%D0%BE%D0%B2%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F.jpg/250px-%D2%90%D0%BE%D0%B4%D0%B7%D1%96%D0%BB%D0%BB%D0%B0_%D1%82%D0%B0_%D0%9A%D0%BE%D0%BD%D0%B3_%D0%9D%D0%BE%D0%B2%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail">
+        </article>
+      </div>
     </section>
 
     <section id="schedule">
@@ -65,7 +73,52 @@
         Повна афіша доступна на партнерському порталі 
         <a href="https://multiplex.ua" target="_blank" rel="noopener noreferrer">онлайн-бронювання квитків</a>.
       </p>
-      <button class="button">Забронювати квиток</button>
+      <button type="button" class="button">Забронювати квиток</button>
+    </section>
+
+    <section id="recommendation">
+      <h2>Пошук та рекомендація фільму</h2>
+      <p>Заповніть форму, щоб знайти фільм або отримати персональну рекомендацію на вечір:</p>
+
+      <form class="request-form">
+        <div class="form-field">
+          <label for="query">Пошуковий запит (назва або актор)</label>
+          <input id="query" name="query" type="text" minlength="2" required>
+        </div>
+
+        <div class="form-field">
+          <label for="genre">Жанр</label>
+          <select id="genre" name="genre" required>
+            <option value="">Оберіть жанр</option>
+            <option value="scifi">Наукова фантастика</option>
+            <option value="comedy">Комедія</option>
+            <option value="action">Бойовик</option>
+            <option value="fantasy">Фентезі</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="format">Формат показу</label>
+          <select id="format" name="format" required>
+            <option value="">Оберіть формат</option>
+            <option value="2d">2D</option>
+            <option value="3d">3D</option>
+            <option value="dolby">VIP Dolby Atmos</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="tickets">Кількість глядачів (від 1 до 10)</label>
+          <input id="tickets" name="tickets" type="number" min="1" max="10" required>
+        </div>
+
+        <div class="form-field">
+          <label for="wishes">Побажання до сеансу</label>
+          <textarea id="wishes" name="wishes" rows="4" minlength="5" required></textarea>
+        </div>
+
+        <button type="submit" class="button">Надіслати</button>
+      </form>
     </section>
 
     <section id="contacts">
