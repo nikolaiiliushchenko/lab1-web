@@ -1,0 +1,6 @@
+// Міксин для mobile-first адаптивності
+@mixin respond-from($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
