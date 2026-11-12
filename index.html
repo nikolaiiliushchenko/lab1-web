@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Кінотеатр «Прем'єра» — Афіша та розклад сеансів</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js" defer></script>
+  <script src="js/scripts.js" defer></script>
 </head>
 <body>
 
@@ -48,32 +48,24 @@
     <section id="movies">
       <h2>Фільми у прокаті</h2>
       <p>Обирайте найкращі новинки кінематографа на цьому тижні:</p>
-      
-      <div class="card-grid">
-        <!-- Картка 1 -->
-        <article class="card">
-          <h3 class="card-title">Дюна: Частина друга</h3>
-          <p>Жанр: наукова фантастика, пригоди. Продовження саги про пустельну планету Арракіс.</p>
-          <img src="https://upload.wikimedia.org/wikipedia/uk/3/39/%D0%94%D1%8E%D0%BD%D0%B0_%D0%A7%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%D0%B4%D1%80%D1%83%D0%B3%D0%B0.jpg?utm_source=uk.wikipedia.org&utm_campaign=index&utm_content=original">
-          <button class="button favorite-button" type="button" aria-pressed="false">
-            Додати в обране
-          </button>
-        </article>
 
-        <!-- Картка 2 -->
-        <article class="card">
-          <h3 class="card-title">Мисливці на привидів: Крижана імперія</h3>
-          <p>Жанр: комедія, фентезі. Нове покоління героїв рятує світ від льодовикового апокаліпсису.</p>
-          <img src="https://thumb.wikimedia.org/wikipedia/uk/thumb/e/ed/%D0%9C%D0%B8%D1%81%D0%BB%D0%B8%D0%B2%D1%86%D1%96_%D0%BD%D0%B0_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%B4%D1%96%D0%B2%2C_%D0%9A%D1%80%D0%B8%D0%B6%D0%B0%D0%BD%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F%2C_2024%2C_%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80.jpg/250px-%D0%9C%D0%B8%D1%81%D0%BB%D0%B8%D0%B2%D1%86%D1%96_%D0%BD%D0%B0_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%B4%D1%96%D0%B2%2C_%D0%9A%D1%80%D0%B8%D0%B6%D0%B0%D0%BD%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F%2C_2024%2C_%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail">
-        </article>
+      <div class="catalog-controls">
+        <label for="item-search">Пошук</label>
+        <input id="item-search" type="search"
+               placeholder="Введіть назву або опис">
 
-        <!-- Картка 3 -->
-        <article class="card">
-          <h3 class="card-title">Ґодзілла та Конґ: Нова імперія</h3>
-          <p>Жанр: фантастика, бойовик. Епічна битва прадавніх титанів проти нової загрози.</p>
-          <img src="https://thumb.wikimedia.org/wikipedia/uk/thumb/7/78/%D2%90%D0%BE%D0%B4%D0%B7%D1%96%D0%BB%D0%BB%D0%B0_%D1%82%D0%B0_%D0%9A%D0%BE%D0%BD%D0%B3_%D0%9D%D0%BE%D0%B2%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F.jpg/250px-%D2%90%D0%BE%D0%B4%D0%B7%D1%96%D0%BB%D0%BB%D0%B0_%D1%82%D0%B0_%D0%9A%D0%BE%D0%BD%D0%B3_%D0%9D%D0%BE%D0%B2%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail">
-        </article>
+        <label for="category-filter">Категорія</label>
+        <select id="category-filter">
+          <option value="all">Усі</option>
+          <option value="фантастика">Фантастика</option>
+          <option value="комедії">Комедії</option>
+          <option value="драми">Драми</option>
+        </select>
       </div>
+
+      <p id="results-count" aria-live="polite"></p>
+      <div id="item-grid" class="card-grid"></div>
+      <p id="empty-message" hidden>Нічого не знайдено.</p>
     </section>
 
     <section id="schedule">

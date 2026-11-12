@@ -231,3 +231,37 @@ a {
   background-color: v.$color-text;
   border-color: v.$color-text;
 }
+/* Панель пошуку та фільтрації каталогу (Лабораторна №6) */
+.catalog-controls {
+  display: grid;
+  gap: v.$space-sm;
+  max-width: 40rem;
+  margin-bottom: v.$space-md;
+
+  input,
+  select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-md;
+    background: v.$color-surface;
+    color: v.$color-text;
+
+    &:focus-visible {
+      outline: 3px solid v.$color-focus;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.catalog-card__image {
+  margin-bottom: v.$space-sm;
+  border-radius: v.$radius-md;
+}
+
+.catalog-card__category {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: v.$color-primary;
+  margin-bottom: 0.5rem;
+}
