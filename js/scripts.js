@@ -231,7 +231,7 @@ grid.addEventListener("click", (event) => {
   button.setAttribute("aria-expanded", String(!isHidden));
 });
 
-// 7. Кнопка «Показати більше» у секції «Про наш довідник» (із Лаби №5)
+// 7. Кнопка «Показати більше» у секції «Про наш довідник»
 const aboutToggle = document.querySelector("#about-toggle");
 const aboutDetails = document.querySelector("#about-extra-details");
 
