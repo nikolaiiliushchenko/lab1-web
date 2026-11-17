@@ -1,0 +1,24 @@
+{
+  "name": "lab1-web",
+  "version": "1.0.0",
+  "description": "- **Тема:** Препроцесор SCSS та адаптивний дизайн веб-сторінки.\r - **Мета:** Навчитися організовувати стилі за допомогою SCSS, використовувати змінні, вкладені правила, міксини та модулі, компілювати SCSS у CSS і адаптувати макет наскрізного сайту для мобільних, планшетних і настільних екранів.\r - **Опис проєкту:** Наскрізний вебсайт кінотеатру «Прем'єра» (Варіант 7) з інформацією про заклад, 3 картками фільмів у прокаті, розкладом сеансів та формою підбору фільму.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolaiiliushchenko/lab1-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nikolaiiliushchenko/lab1-web/issues"
+  },
+  "homepage": "https://github.com/nikolaiiliushchenko/lab1-web#readme",
+  "devDependencies": {
+    "sass": "^1.108.1"
+  }
+}

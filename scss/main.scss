@@ -61,7 +61,7 @@ h2 {
 }
 
 p {
-  margin: 0 0 v.$space-md 0;
+  margin: 0 0 v.$space-sm 0;
 }
 
 a {
@@ -116,6 +116,42 @@ a {
   }
 }
 
+/* Панель пошуку, фільтрації та сортування (F2, F4) */
+.catalog-controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: v.$space-md;
+  margin-bottom: v.$space-md;
+  background: v.$color-surface;
+  padding: v.$space-md;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+
+  @include m.respond-from(v.$bp-tablet) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .form-field {
+    display: grid;
+    gap: 0.375rem;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-md;
+    background: v.$color-surface;
+    color: v.$color-text;
+
+    &:focus-visible {
+      outline: 3px solid v.$color-focus;
+      outline-offset: 2px;
+    }
+  }
+}
+
 /* Сітка карток: 1 колонка (360px) -> 2 колонки (768px) -> 3 колонки (1280px) */
 .card-grid {
   display: grid;
@@ -132,7 +168,7 @@ a {
   }
 }
 
-/* Оформлення карток із вкладеністю */
+/* Оформлення карток країн (F1, F3) */
 .card {
   background: v.$color-surface;
   padding: v.$space-md;
@@ -148,7 +184,24 @@ a {
   h3 {
     color: v.$color-text;
     font-size: 1.25rem;
+    margin-bottom: 0.5rem;
   }
+}
+
+.catalog-card__image {
+  width: 100%;
+  height: 11rem;
+  object-fit: cover;
+  margin-bottom: v.$space-sm;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+}
+
+.catalog-card__category {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: v.$color-primary;
+  margin-bottom: 0.375rem;
 }
 
 /* Кнопка зі станами через батьківський селектор & */
@@ -157,7 +210,7 @@ a {
   width: 100%;
   background-color: v.$color-primary;
   color: v.$color-surface;
-  padding: v.$space-md;
+  padding: 0.625rem v.$space-md;
   border: 1px solid v.$color-primary;
   border-radius: v.$radius-md;
   cursor: pointer;
@@ -177,7 +230,7 @@ a {
   }
 }
 
-/* Адаптивна форма та стани полів із вкладеністю */
+/* Адаптивна форма зворотного зв'язку */
 .request-form {
   display: grid;
   gap: v.$space-md;
@@ -209,59 +262,29 @@ a {
     }
   }
 }
-/* Стани інтерфейсу для JavaScript (Лабораторна №5) */
+
+/* Стани інтерфейсу для JavaScript (F2, F3) */
 .details-toggle,
-.favorite-button {
-  margin: v.$space-sm 0;
+.card-details-button {
+  margin-top: v.$space-sm;
 }
 
 .extra-details {
   margin-top: v.$space-sm;
   padding: v.$space-md;
-  background: v.$color-surface;
+  background: v.$color-background;
   border: 1px solid v.$color-border;
   border-radius: v.$radius-md;
 }
 
+.empty-message {
+  padding: v.$space-md;
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+  font-weight: 600;
+}
+
 .is-hidden {
   display: none;
-}
-
-.is-active {
-  background-color: v.$color-text;
-  border-color: v.$color-text;
-}
-/* Панель пошуку та фільтрації каталогу (Лабораторна №6) */
-.catalog-controls {
-  display: grid;
-  gap: v.$space-sm;
-  max-width: 40rem;
-  margin-bottom: v.$space-md;
-
-  input,
-  select {
-    width: 100%;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid v.$color-border;
-    border-radius: v.$radius-md;
-    background: v.$color-surface;
-    color: v.$color-text;
-
-    &:focus-visible {
-      outline: 3px solid v.$color-focus;
-      outline-offset: 2px;
-    }
-  }
-}
-
-.catalog-card__image {
-  margin-bottom: v.$space-sm;
-  border-radius: v.$radius-md;
-}
-
-.catalog-card__category {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: v.$color-primary;
-  margin-bottom: 0.5rem;
 }

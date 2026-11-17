@@ -3,125 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кінотеатр «Прем'єра» — Афіша та розклад сеансів</title>
+  <title>Довідник країн світу — Пошук та інформація про держави</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js" defer></script>
 </head>
 <body>
 
   <header class="site-header">
-    <h1>Кінотеатр «Прем'єра»</h1>
+    <h1>Довідник країн світу</h1>
     <nav class="main-nav">
       <ul>
-        <li><a href="#about">Про кінотеатр</a></li>
-        <li><a href="#movies">Фільми</a></li>
-        <li><a href="#schedule">Розклад сеансів</a></li>
-        <li><a href="#recommendation">Підбір фільму</a></li>
+        <li><a href="#about">Про довідник</a></li>
+        <li><a href="#catalog">Каталог країн</a></li>
+        <li><a href="#feedback">Запропонувати уточнення</a></li>
         <li><a href="#contacts">Контакти</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- Секція 1: Про проєкт + інтерактивність із Лаби №5 -->
     <section id="about">
-      <h2>Про наш кінотеатр</h2>
+      <h2>Про наш довідник</h2>
       <p>
-        «Прем'єра» — сучасний міський кінотеатр, обладнаний лазерними проєкторами 4K та акустикою Dolby Atmos.
-      </p>
-      <p>
-        Ми пропонуємо зали з ергономічними кріслами, VIP-зони та класичний кінобар зі свіжим попкорном.
+        Вебзастосунок «Довідник країн» створено для швидкого пошуку, фільтрації за регіонами, сортування та перегляду основних географічних і демографічних відомостей про держави світу.
       </p>
 
-      <button class="button details-toggle" type="button" aria-expanded="false" aria-controls="extra-details">
+      <button id="about-toggle" class="button details-toggle" type="button" aria-expanded="false" aria-controls="about-extra-details">
         Показати більше
       </button>
 
-      <div id="extra-details" class="extra-details is-hidden">
+      <div id="about-extra-details" class="extra-details is-hidden">
         <p>
-          У нашому кінотеатрі працює 5 сучасних залів загальною місткістю 600 місць, діють студентські знижки щосереди та безкоштовний паркінг для відвідувачів.
+          Довідник містить перевірені дані про офіційні столиці, чисельність населення, площу території, валюту та державні мови країн Європи, Азії, Америки, Африки та Океанії.
         </p>
       </div>
-
-      <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Sala_de_cine.jpg/330px-Sala_de_cine.jpg?utm_source=ru.wikipedia.org&utm_campaign=parser&utm_content=thumbnail">
     </section>
 
-    <section id="movies">
-      <h2>Фільми у прокаті</h2>
-      <p>Обирайте найкращі новинки кінематографа на цьому тижні:</p>
+    <!-- Секція 2: Каталог країн (Вимоги F1, F2, F3, F4) -->
+    <section id="catalog">
+      <h2>Каталог країн світу</h2>
+      <p>Скористайтеся пошуком, фільтром за регіоном або сортуванням для відбору країн:</p>
 
       <div class="catalog-controls">
-        <label for="item-search">Пошук</label>
-        <input id="item-search" type="search"
-               placeholder="Введіть назву або опис">
+        <div class="form-field">
+          <label for="item-search">Пошук за назвою або столицею</label>
+          <input id="item-search" type="search" placeholder="Наприклад: Україна, Токіо, Канада...">
+        </div>
 
-        <label for="category-filter">Категорія</label>
-        <select id="category-filter">
-          <option value="all">Усі</option>
-          <option value="фантастика">Фантастика</option>
-          <option value="комедії">Комедії</option>
-          <option value="драми">Драми</option>
-        </select>
+        <div class="form-field">
+          <label for="category-filter">Регіон</label>
+          <select id="category-filter">
+            <option value="all">Усі</option>
+            <option value="Європа">Європа</option>
+            <option value="Азія">Азія</option>
+            <option value="Америка">Америка</option>
+            <option value="Африка">Африка</option>
+            <option value="Океанія">Океанія</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="sort-select">Сортування</label>
+          <select id="sort-select">
+            <option value="default">За замовчуванням</option>
+            <option value="name-asc">За назвою (А–Я)</option>
+            <option value="name-desc">За назвою (Я–А)</option>
+            <option value="pop-desc">За населенням (від більшого)</option>
+            <option value="pop-asc">За населенням (від меншого)</option>
+          </select>
+        </div>
       </div>
 
       <p id="results-count" aria-live="polite"></p>
       <div id="item-grid" class="card-grid"></div>
-      <p id="empty-message" hidden>Нічого не знайдено.</p>
+      <p id="empty-message" class="empty-message" hidden>Нічого не знайдено</p>
     </section>
 
-    <section id="schedule">
-      <h2>Розклад сеансів на сьогодні</h2>
-      <ul>
-        <li><strong>12:00</strong> — «Дюна: Частина друга» (Зала 1, 2D)</li>
-        <li><strong>15:30</strong> — «Мисливці на привидів» (Зала 2, 3D)</li>
-        <li><strong>18:00</strong> — «Дюна: Частина друга» (VIP Зала, Dolby Atmos)</li>
-        <li><strong>21:15</strong> — «Мисливці на привидів» (Зала 1, 2D)</li>
-      </ul>
-      <p>
-        Повна афіша доступна на партнерському порталі 
-        <a href="https://multiplex.ua" target="_blank" rel="noopener noreferrer">онлайн-бронювання квитків</a>.
-      </p>
-      <button type="button" class="button">Забронювати квиток</button>
-    </section>
-
-    <section id="recommendation">
-      <h2>Пошук та рекомендація фільму</h2>
-      <p>Заповніть форму, щоб знайти фільм або отримати персональну рекомендацію на вечір:</p>
+    <!-- Секція 3: Форма зворотного зв'язку з валідацією (із Лаби №3) -->
+    <section id="feedback">
+      <h2>Запропонувати оновлення даних</h2>
+      <p>Знайшли неточність або хочете додати нову країну до каталогу? Заповніть форму нижче:</p>
 
       <form class="request-form">
         <div class="form-field">
-          <label for="query">Пошуковий запит (назва або актор)</label>
-          <input id="query" name="query" type="text" minlength="2" required>
+          <label for="country-name">Назва країни</label>
+          <input id="country-name" name="countryName" type="text" minlength="2" required>
         </div>
 
         <div class="form-field">
-          <label for="genre">Жанр</label>
-          <select id="genre" name="genre" required>
-            <option value="">Оберіть жанр</option>
-            <option value="scifi">Наукова фантастика</option>
-            <option value="comedy">Комедія</option>
-            <option value="action">Бойовик</option>
-            <option value="fantasy">Фентезі</option>
+          <label for="region-select">Регіон</label>
+          <select id="region-select" name="region" required>
+            <option value="">Оберіть регіон</option>
+            <option value="europe">Європа</option>
+            <option value="asia">Азія</option>
+            <option value="americas">Америка</option>
+            <option value="africa">Африка</option>
+            <option value="oceania">Океанія</option>
           </select>
         </div>
 
         <div class="form-field">
-          <label for="format">Формат показу</label>
-          <select id="format" name="format" required>
-            <option value="">Оберіть формат</option>
-            <option value="2d">2D</option>
-            <option value="3d">3D</option>
-            <option value="dolby">VIP Dolby Atmos</option>
-          </select>
+          <label for="user-email">Ваш Email для відповіді</label>
+          <input id="user-email" name="email" type="email" required>
         </div>
 
         <div class="form-field">
-          <label for="tickets">Кількість глядачів (від 1 до 10)</label>
-          <input id="tickets" name="tickets" type="number" min="1" max="10" required>
-        </div>
-
-        <div class="form-field">
-          <label for="wishes">Побажання до сеансу</label>
-          <textarea id="wishes" name="wishes" rows="4" minlength="5" required></textarea>
+          <label for="comment">Опис уточнення або додаткові дані</label>
+          <textarea id="comment" name="comment" rows="4" minlength="5" required></textarea>
         </div>
 
         <button type="submit" class="button">Надіслати</button>
@@ -129,15 +118,14 @@
     </section>
 
     <section id="contacts">
-      <h2>Контакти та адреса</h2>
-      <p>Адреса: м. Київ, вул. Хрещатик, 1</p>
-      <p>Телефон каси: +380 (44) 123-45-67</p>
-      <p>Email: info@cinema-premiera.ua</p>
+      <h2>Контакти проєкту</h2>
+      <p>Адреса редакції: м. Київ, вул. Хрещатик, 1</p>
+      <p>Email підтримки: info@countries-guide.ua</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Кінотеатр «Прем'єра». Всі права захищені.</p>
+    <p>&copy; 2026 Вебзастосунок «Довідник країн». Курсова робота.</p>
   </footer>
 
 </body>

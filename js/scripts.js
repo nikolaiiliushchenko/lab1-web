@@ -1,125 +1,244 @@
-// Крок 2. Масив даних (8 фільмів у 3 категоріях)
+// 1. Масив даних про країни світу (12 об'єктів у 5 регіонах)
 const items = [
   {
     id: 1,
-    title: "Дюна: Частина друга",
-    category: "фантастика",
-    description: "Жанр: наукова фантастика, пригоди. Продовження епічної саги про пустельну планету Арракіс.",
-    image: "https://upload.wikimedia.org/wikipedia/uk/3/39/%D0%94%D1%8E%D0%BD%D0%B0_%D0%A7%D0%B0%D1%81%D1%82%D0%B8%D0%BD%D0%B0_%D0%B4%D1%80%D1%83%D0%B3%D0%B0.jpg?utm_source=uk.wikipedia.org&utm_campaign=index&utm_content=original"
+    title: "Україна",
+    capital: "Київ",
+    category: "Європа",
+    population: 38000000,
+    area: "603 628 км²",
+    currency: "Гривня (UAH)",
+    language: "Українська",
+    image: "https://flagcdn.com/w640/ua.png"
   },
   {
     id: 2,
-    title: "Мисливці на привидів: Крижана імперія",
-    category: "комедії",
-    description: "Жанр: комедія, фентезі. Нове покоління героїв рятує світ від льодовикового апокаліпсису.",
-    image: "https://thumb.wikimedia.org/wikipedia/uk/thumb/e/ed/%D0%9C%D0%B8%D1%81%D0%BB%D0%B8%D0%B2%D1%86%D1%96_%D0%BD%D0%B0_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%B4%D1%96%D0%B2%2C_%D0%9A%D1%80%D0%B8%D0%B6%D0%B0%D0%BD%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F%2C_2024%2C_%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80.jpg/250px-%D0%9C%D0%B8%D1%81%D0%BB%D0%B8%D0%B2%D1%86%D1%96_%D0%BD%D0%B0_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%B4%D1%96%D0%B2%2C_%D0%9A%D1%80%D0%B8%D0%B6%D0%B0%D0%BD%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F%2C_2024%2C_%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+    title: "Франція",
+    capital: "Париж",
+    category: "Європа",
+    population: 68000000,
+    area: "551 695 км²",
+    currency: "Євро (EUR)",
+    language: "Французька",
+    image: "https://flagcdn.com/w640/fr.png"
   },
   {
     id: 3,
-    title: "Ґодзілла та Конґ: Нова імперія",
-    category: "фантастика",
-    description: "Жанр: фантастика, бойовик. Епічна битва прадавніх титанів проти нової підземної загрози.",
-    image: "https://thumb.wikimedia.org/wikipedia/uk/thumb/7/78/%D2%90%D0%BE%D0%B4%D0%B7%D1%96%D0%BB%D0%BB%D0%B0_%D1%82%D0%B0_%D0%9A%D0%BE%D0%BD%D0%B3_%D0%9D%D0%BE%D0%B2%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F.jpg/250px-%D2%90%D0%BE%D0%B4%D0%B7%D1%96%D0%BB%D0%BB%D0%B0_%D1%82%D0%B0_%D0%9A%D0%BE%D0%BD%D0%B3_%D0%9D%D0%BE%D0%B2%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F.jpg?utm_source=uk.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+    title: "Німеччина",
+    capital: "Берлін",
+    category: "Європа",
+    population: 84400000,
+    area: "357 588 км²",
+    currency: "Євро (EUR)",
+    language: "Німецька",
+    image: "https://flagcdn.com/w640/de.png"
   },
   {
     id: 4,
-    title: "Оппенгеймер",
-    category: "драми",
-    description: "Жанр: біографічна драма, історія. Історія створення атомної бомби фізиком Робертом Оппенгеймером.",
-    image: "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg"
+    title: "Велика Британія",
+    capital: "Лондон",
+    category: "Європа",
+    population: 67700000,
+    area: "242 495 км²",
+    currency: "Фунт стерлінгів (GBP)",
+    language: "Англійська",
+    image: "https://flagcdn.com/w640/gb.png"
   },
   {
     id: 5,
-    title: "Інтерстеллар",
-    category: "фантастика",
-    description: "Жанр: наукова фантастика, драма. Подорож крізь червоточину в пошуках нового дому для людства.",
-    image: "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+    title: "Японія",
+    capital: "Токіо",
+    category: "Азія",
+    population: 124500000,
+    area: "377 975 км²",
+    currency: "Єна (JPY)",
+    language: "Японська",
+    image: "https://flagcdn.com/w640/jp.png"
   },
   {
     id: 6,
-    title: "Готель «Гранд Будапешт»",
-    category: "комедії",
-    description: "Жанр: пригодницька комедія. Кумедні пригоди легендарного консьєржа Густава та портьє Зеро Мустафи.",
-    image: "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Grand_Budapest_Hotel.png"
+    title: "Південна Корея",
+    capital: "Сеул",
+    category: "Азія",
+    population: 51700000,
+    area: "100 210 км²",
+    currency: "Вона (KRW)",
+    language: "Корейська",
+    image: "https://flagcdn.com/w640/kr.png"
   },
   {
     id: 7,
-    title: "Людина-павук: Крізь Всесвіт",
-    category: "комедії",
-    description: "Жанр: анімація, комедія, пригоди. Майлз Моралес вирушає у подорож мультивсесвітом героїв.",
-    image: "https://upload.wikimedia.org/wikipedia/en/b/b4/Spider-Man-_Across_the_Spider-Verse_poster.jpg"
+    title: "Індія",
+    capital: "Нью-Делі",
+    category: "Азія",
+    population: 1428000000,
+    area: "3 287 263 км²",
+    currency: "Індійська рупія (INR)",
+    language: "Гінді, Англійська",
+    image: "https://flagcdn.com/w640/in.png"
   },
   {
     id: 8,
-    title: "Зелена миля",
-    category: "драми",
-    description: "Жанр: драма. Зворушлива історія наглядача в'язниці Пола Еджкомба та незвичайного в'язня Джона Коффі.",
-    image: "https://upload.wikimedia.org/wikipedia/en/e/e2/The_Green_Mile_%28movie_poster%29.jpg"
+    title: "США",
+    capital: "Вашингтон",
+    category: "Америка",
+    population: 334900000,
+    area: "9 833 520 км²",
+    currency: "Долар США (USD)",
+    language: "Англійська",
+    image: "https://flagcdn.com/w640/us.png"
+  },
+  {
+    id: 9,
+    title: "Канада",
+    capital: "Оттава",
+    category: "Америка",
+    population: 40100000,
+    area: "9 984 670 км²",
+    currency: "Канадський долар (CAD)",
+    language: "Англійська, Французька",
+    image: "https://flagcdn.com/w640/ca.png"
+  },
+  {
+    id: 10,
+    title: "Бразилія",
+    capital: "Бразиліа",
+    category: "Америка",
+    population: 203000000,
+    area: "8 515 767 км²",
+    currency: "Бразильський реал (BRL)",
+    language: "Португальська",
+    image: "https://flagcdn.com/w640/br.png"
+  },
+  {
+    id: 11,
+    title: "Єгипет",
+    capital: "Каїр",
+    category: "Африка",
+    population: 112700000,
+    area: "1 010 408 км²",
+    currency: "Єгипетський фунт (EGP)",
+    language: "Арабська",
+    image: "https://flagcdn.com/w640/eg.png"
+  },
+  {
+    id: 12,
+    title: "Австралія",
+    capital: "Канберра",
+    category: "Океанія",
+    population: 26600000,
+    area: "7 692 024 км²",
+    currency: "Австралійський долар (AUD)",
+    language: "Англійська",
+    image: "https://flagcdn.com/w640/au.png"
   }
 ];
 
-// Крок 3. Отримання елементів DOM
+// 2. Отримання елементів DOM
 const grid = document.querySelector("#item-grid");
 const searchInput = document.querySelector("#item-search");
 const categorySelect = document.querySelector("#category-filter");
+const sortSelect = document.querySelector("#sort-select");
 const resultsCount = document.querySelector("#results-count");
 const emptyMessage = document.querySelector("#empty-message");
 
-// Крок 4. Створення шаблону картки
+// Форматування числа населення з пробілами (наприклад: 38 000 000)
+function formatPopulation(value) {
+  return value.toLocaleString("uk-UA");
+}
+
+// 3. Створення HTML-шаблону картки (F1 — основні дані, F3 — детальна інформація)
 function createCard(item) {
   return `
     <article class="card catalog-card" data-id="${item.id}">
-      <img class="catalog-card__image" src="${item.image}"
-           alt="${item.title}">
+      <img class="catalog-card__image" src="${item.image}" alt="Прапор країни ${item.title}">
       <div class="catalog-card__content">
-        <p class="catalog-card__category">Категорія: ${item.category}</p>
+        <p class="catalog-card__category">Регіон: ${item.category}</p>
         <h3 class="card-title">${item.title}</h3>
-        <p>${item.description}</p>
+        <p><strong>Столиця:</strong> ${item.capital}</p>
+        <p><strong>Населення:</strong> ${formatPopulation(item.population)} осіб</p>
+
+        <button class="button card-details-button" type="button" aria-expanded="false" aria-controls="details-${item.id}">
+          Детальніше
+        </button>
+
+        <div id="details-${item.id}" class="extra-details is-hidden">
+          <p><strong>Столиця:</strong> ${item.capital}</p>
+          <p><strong>Регіон:</strong> ${item.category}</p>
+          <p><strong>Населення:</strong> ${formatPopulation(item.population)} осіб</p>
+          <p><strong>Площа:</strong> ${item.area}</p>
+          <p><strong>Валюта:</strong> ${item.currency}</p>
+          <p><strong>Мова:</strong> ${item.language}</p>
+        </div>
       </div>
     </article>
   `;
 }
 
-// Крок 5. Реалізація рендерингу
+// 4. Рендеринг списку карток у DOM (F1, F2)
 function renderItems(itemsToRender) {
   grid.innerHTML = itemsToRender.map(createCard).join("");
-  resultsCount.textContent = `Знайдено: ${itemsToRender.length}`;
+  resultsCount.textContent = `Знайдено країн: ${itemsToRender.length}`;
   emptyMessage.hidden = itemsToRender.length !== 0;
 }
 
 renderItems(items);
 
-// Крок 6. Спільна фільтрація за пошуком і категорією
+// 5. Спільна фільтрація за пошуком і регіоном (F2) та сортування (F4)
 function applyFilters() {
   const query = searchInput.value.trim().toLowerCase();
   const selectedCategory = categorySelect.value;
+  const sortMode = sortSelect.value;
 
   const filteredItems = items.filter((item) => {
-    const searchableText =
-      `${item.title} ${item.description}`.toLowerCase();
+    const searchableText = `${item.title} ${item.capital}`.toLowerCase();
     const matchesText = searchableText.includes(query);
-    const matchesCategory = selectedCategory === "all" ||
-      item.category === selectedCategory;
+    const matchesCategory = selectedCategory === "all" || item.category === selectedCategory;
 
     return matchesText && matchesCategory;
   });
 
-  renderItems(filteredItems);
+  // Сортування відфільтрованого списку за назвою або населенням (F4)
+  const sortedItems = [...filteredItems];
+
+  if (sortMode === "name-asc") {
+    sortedItems.sort((a, b) => a.title.localeCompare(b.title, "uk"));
+  } else if (sortMode === "name-desc") {
+    sortedItems.sort((a, b) => b.title.localeCompare(a.title, "uk"));
+  } else if (sortMode === "pop-desc") {
+    sortedItems.sort((a, b) => b.population - a.population);
+  } else if (sortMode === "pop-asc") {
+    sortedItems.sort((a, b) => a.population - b.population);
+  }
+
+  renderItems(sortedItems);
 }
 
 searchInput.addEventListener("input", applyFilters);
 categorySelect.addEventListener("change", applyFilters);
+sortSelect.addEventListener("change", applyFilters);
 
-// показ і приховування блоку "Про кінотеатр" лаб5
-const toggleButton = document.querySelector(".details-toggle");
-const details = document.querySelector("#extra-details");
+// 6. Відкриття детальної інформації на картці країни (F3)
+grid.addEventListener("click", (event) => {
+  const button = event.target.closest(".card-details-button");
+  if (!button) return;
 
-if (toggleButton && details) {
-  toggleButton.addEventListener("click", () => {
-    const isHidden = details.classList.toggle("is-hidden");
-    toggleButton.textContent = isHidden
-      ? "Показати більше"
-      : "Приховати";
-    toggleButton.setAttribute("aria-expanded", String(!isHidden));
+  const card = button.closest(".catalog-card");
+  const detailsBlock = card.querySelector(".extra-details");
+
+  const isHidden = detailsBlock.classList.toggle("is-hidden");
+  button.textContent = isHidden ? "Детальніше" : "Приховати деталі";
+  button.setAttribute("aria-expanded", String(!isHidden));
+});
+
+// 7. Кнопка «Показати більше» у секції «Про наш довідник» (із Лаби №5)
+const aboutToggle = document.querySelector("#about-toggle");
+const aboutDetails = document.querySelector("#about-extra-details");
+
+if (aboutToggle && aboutDetails) {
+  aboutToggle.addEventListener("click", () => {
+    const isHidden = aboutDetails.classList.toggle("is-hidden");
+    aboutToggle.textContent = isHidden ? "Показати більше" : "Приховати";
+    aboutToggle.setAttribute("aria-expanded", String(!isHidden));
   });
 }
